@@ -12,6 +12,7 @@ use li3_mailer\core\Mailer;
  * @see lithium\core\Adaptable
  */
 Mailer::types(array(
+	'reset',
 	'registered',
 	'reminder',
 	'password_reset'

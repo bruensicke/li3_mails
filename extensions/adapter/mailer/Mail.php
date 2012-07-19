@@ -2,6 +2,8 @@
 
 namespace li3_mailer\extensions\adapter\mailer;
 
+use li3_mailer\core\Mailer;
+
 class Mail extends \lithium\core\Object {
 
 	/**
@@ -27,8 +29,15 @@ class Mail extends \lithium\core\Object {
 		$config = $this->_config;
 		$params = compact('type', 'data', 'options');
 		return function($self, $params) use (&$config) {
-			
-			return mail();
+
+debug($options);
+debug($data);
+		$content = Mailer::render($template, $data, $options);
+debug($content);
+
+
+			debug($params);
+			// return mail();
 		};
 	}
 }

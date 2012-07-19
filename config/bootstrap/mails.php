@@ -12,12 +12,12 @@ Mailer::config(array(
 	'default' => array(
 		'adapter' => 'Mail',
 		'to' => 'bcc@example.com',
-		'types' => true,
 	),
 	'postmark' => array(
 		'adapter' => 'Postmark',
 		'token' => 'foo',
-		'types' => array(
+		'templates' => array(
+			'reset',
 			'registered',
 			'reminder',
 			'password_reset'
@@ -25,7 +25,7 @@ Mailer::config(array(
 	),
 ));
 
-Mailer::types(array(
+Mailer::templates(array(
 	'users/registered' => array(
 		'from' => 'team@example.com',
 		'subject' => 'Welcome {:name}',
@@ -33,4 +33,11 @@ Mailer::types(array(
 		// 'template' => '{:locale}/registered',
 		'layout' => 'default',
 	),
+	// 'users/reset' => array(
+	// 	'from' => 'team@example.com',
+	// 	'subject' => 'New pw for {:name}',
+	// 	'template' => '{:name}',
+	// 	// 'template' => '{:locale}/registered',
+	// 	'layout' => 'default',
+	// ),
 ));
